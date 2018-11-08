@@ -1,49 +1,56 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <link href="css/style.css" rel="stylesheet">
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Google login Test</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
 </head>
 
 <body>
   <div class="container">
-
     <div class="row">
-      <div class="col-md-1 col-md-offset-1">
-        <img src="images\Logo.svg" alt="logo">
+      <div class="title col-md-12 text-center">
+        <h1>Proyecto Blog</h1>
       </div>
+    </div>
+    <div class="bienvenida row">
       <div class="col-md-9">
-        <h1>Jane Doette</h1>
-        </br>
-        <span>Front-end ninja</span>
+        <h3>Bienvenido {{username}}</h3>
       </div>
-      </hr>
-    </div>
-
-    <div class="row">
-      <div class="col-md-1">
-        <div id="color1"></div>
-        <div id="color2"></div>
-        <div id="color3"></div>
-        <p>F8981CBCBBBB747704</p>
-      </div>
-      <div class="col-md-10">
-        <img src="images\img4.png" alt="html">
+      <div class="col-md-3 text-right login">
+        {% if username %}
+          <a href="/logout">Logout</a>
+        {% else %}
+          <a href="/login">Login</a>
+        {% endif %}
       </div>
     </div>
-    <div class="col-md-12">
-      <h3>Featured work</h3>
-    </div>
-
-    <div class="row">
-      <div class="col-md-10">
-        <img src="images\img4.png" alt="html">
-        <label></label>
+     <div class="row">
+      <div class="boton col-md-12">
+        <a href="/agregarPost" class="btn btn-primary">Agregar</a>
       </div>
     </div>
+     <div class="row">
+        
+          {% block content %}
+          {% endblock %}
+        
+      </div>
 
   </div>
+
 
 </body>
 
