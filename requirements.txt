@@ -11,7 +11,7 @@ Flask==0.12.2
 httplib2==0.10.3
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 jupyter-c-kernel==1.2.2
 ldap3==2.4.1
 MarkupSafe==1.0
